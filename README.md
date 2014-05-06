@@ -1,6 +1,6 @@
 # ibm866 [![Build status](https://travis-ci.org/mathiasbynens/ibm866.svg?branch=master)](https://travis-ci.org/mathiasbynens/ibm866) [![Dependency status](https://gemnasium.com/mathiasbynens/ibm866.svg)](https://gemnasium.com/mathiasbynens/ibm866)
 
-_ibm866_ is robust JavaScript implementation of [the ibm866 character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#ibm866).
+_ibm866_ is a robust JavaScript implementation of [the ibm866 character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#ibm866).
 
 This encoding is known under the following names: 866, cp866, csibm866, ibm866, and ibm866.
 
