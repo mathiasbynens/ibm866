@@ -1,4 +1,4 @@
-/*! http://mths.be/ibm866 v0.1.1 by @mathias | MIT license */
+/*! http://mths.be/ibm866 v0.1.2 by @mathias | MIT license */
 ;(function(root) {
 
 	// Detect free variables `exports`.
@@ -121,7 +121,7 @@
 			'csibm866',
 			'ibm866'
 		],
-		'version': '0.1.1'
+		'version': '0.1.2'
 	};
 
 	// Some AMD build optimizers, like r.js, check for specific condition patterns
