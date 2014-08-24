@@ -1,4 +1,4 @@
-/*! http://mths.be/ibm866 v0.1.2 by @mathias | MIT license */
+/*! https://mths.be/ibm866 v0.1.2 by @mathias | MIT license */
 ;(function(root) {
 
 	// Detect free variables `exports`.
