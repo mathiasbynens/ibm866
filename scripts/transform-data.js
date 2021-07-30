@@ -1,42 +1,42 @@
-var fs = require('fs');
-var jsesc = require('jsesc');
+const fs = require('fs');
+const jsesc = require('jsesc');
 
 function format(object) {
 	return jsesc(object, {
-		'json': true,
-		'compact': false
+		json: true,
+		compact: false,
 	}) + '\n';
 }
 
 function parse(source) {
-	var indexByCodePoint = {};
-	var indexByPointer = {};
-	var decoded = '';
-	var encoded = '';
+	const indexByCodePoint = {};
+	const indexByPointer = {};
+	let decoded = '';
+	let encoded = '';
 	var lines = source.split('\n');
-	lines.forEach(function(line) {
-		var data = line.trim().split('\t');
+	for (const line of lines) {
+		const data = line.trim().split('\t');
 		if (data.length != 3) {
-			return;
+			continue;
 		}
-		var pointer = Number(data[0]);
-		var codePoint = Number(data[1]);
-		var symbol = String.fromCodePoint(codePoint);
+		const pointer = Number(data[0]);
+		const codePoint = Number(data[1]);
+		const symbol = String.fromCodePoint(codePoint);
 		decoded += symbol;
 		encoded += String.fromCodePoint(pointer + 0x80);
 		indexByCodePoint[codePoint] = pointer;
 		indexByPointer[pointer] = symbol;
-	});
+	}
 	return {
-		'decoded': decoded,
-		'encoded': encoded,
-		'indexByCodePoint': indexByCodePoint,
-		'indexByPointer': indexByPointer
+		decoded: decoded,
+		encoded: encoded,
+		indexByCodePoint: indexByCodePoint,
+		indexByPointer: indexByPointer
 	};
 }
 
-var source = fs.readFileSync('./data/index.txt', 'utf-8');
-var result = parse(source);
+const source = fs.readFileSync('./data/index.txt', 'utf-8');
+const result = parse(source);
 fs.writeFileSync(
 	'./data/index-by-code-point.json',
 	format(result.indexByCodePoint)
