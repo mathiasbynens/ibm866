@@ -1,4 +1,4 @@
-/*! https://mths.be/ibm866 v1.0.2 by @mathias | MIT license */
+/*! https://mths.be/ibm866 v1.1.0 by @mathias | MIT license */
 ;(function() {
 
 	const stringFromCharCode = String.fromCharCode;
@@ -97,7 +97,7 @@
 			'csibm866',
 			'ibm866'
 		],
-		version: '1.0.2',
+		version: '1.1.0',
 	};
 
 	module.exports = ibm866;
