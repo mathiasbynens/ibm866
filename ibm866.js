@@ -1,4 +1,4 @@
-/*! https://mths.be/ibm866 v1.0.1 by @mathias | MIT license */
+/*! https://mths.be/ibm866 v1.0.2 by @mathias | MIT license */
 ;(function() {
 
 	var object = {};
@@ -105,7 +105,7 @@
 			'csibm866',
 			'ibm866'
 		],
-		version: '1.0.1',
+		version: '1.0.2',
 	};
 
 	module.exports = ibm866;
