@@ -12,23 +12,15 @@ Via [npm](https://www.npmjs.com/):
 npm install ibm866
 ```
 
-In a browser:
-
-```html
-<script src="ibm866.js"></script>
-```
-
-In [Node.js](https://nodejs.org/):
+In a browser or in [Node.js](https://nodejs.org/):
 
 ```js
-const ibm866 = require('ibm866');
+import {encode, decode, labels} from 'ibm866';
+// or…
+import * as ibm866 from 'ibm866';
 ```
 
 ## API
-
-### `ibm866.version`
-
-A string representing the semantic version number.
 
 ### `ibm866.labels`
 
