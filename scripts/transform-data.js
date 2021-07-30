@@ -1,6 +1,5 @@
 var fs = require('fs');
 var jsesc = require('jsesc');
-require('string.fromcodepoint');
 
 function format(object) {
 	return jsesc(object, {
