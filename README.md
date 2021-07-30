@@ -1,4 +1,4 @@
-# ibm866 [![Build status](https://travis-ci.org/mathiasbynens/ibm866.svg?branch=master)](https://travis-ci.org/mathiasbynens/ibm866) [![Code coverage status](https://coveralls.io/repos/mathiasbynens/ibm866/badge.svg)](https://coveralls.io/r/mathiasbynens/ibm866) [![Dependency status](https://gemnasium.com/mathiasbynens/ibm866.svg)](https://gemnasium.com/mathiasbynens/ibm866)
+# ibm866 [![ibm866 on npm](https://img.shields.io/npm/v/ibm866)](https://www.npmjs.com/package/ibm866)
 
 _ibm866_ is a robust JavaScript implementation of [the ibm866 character encoding as defined by the Encoding Standard](https://encoding.spec.whatwg.org/#ibm866).
 
@@ -18,32 +18,10 @@ In a browser:
 <script src="ibm866.js"></script>
 ```
 
-In [Node.js](https://nodejs.org/), [io.js](https://iojs.org/), [Narwhal](http://narwhaljs.org/), and [RingoJS](http://ringojs.org/):
+In [Node.js](https://nodejs.org/):
 
 ```js
-var ibm866 = require('ibm866');
-```
-
-In [Rhino](https://www.mozilla.org/rhino/):
-
-```js
-load('ibm866.js');
-```
-
-Using an AMD loader like [RequireJS](http://requirejs.org/):
-
-```js
-require(
-  {
-    'paths': {
-      'ibm866': 'path/to/ibm866'
-    }
-  },
-  ['ibm866'],
-  function(ibm866) {
-    console.log(ibm866);
-  }
-);
+const ibm866 = require('ibm866');
 ```
 
 ## API
@@ -68,7 +46,7 @@ The optional `options` object and its `mode` property can be used to set the [er
 
 ```js
 const encodedData = ibm866.encode(text, {
-  'mode': 'html'
+  mode: 'html'
 });
 // If `text` contains a symbol that cannot be represented in ibm866,
 // instead of throwing an error, it will return an HTML entity for the symbol.
@@ -86,17 +64,13 @@ The optional `options` object and its `mode` property can be used to set the [er
 
 ```js
 const text = ibm866.decode(encodedData, {
-  'mode': 'fatal'
+  mode: 'fatal'
 });
 // If `encodedData` contains an invalid byte for the ibm866 encoding,
 // instead of replacing it with U+FFFD in the output, an error is thrown.
 ```
 
 For decoding a buffer (e.g. from `fs.readFile`) use `buffer.toString('binary')` to get the byte string which `decode` takes.
-
-## Support
-
-_ibm866_ is designed to work in at least Node.js v0.10.0, io.js v1.0.0, Narwhal 0.3.2, RingoJS 0.8-0.11, PhantomJS 1.9.0, Rhino 1.7RC4, as well as old and modern versions of Chrome, Firefox, Safari, Opera, Edge, and Internet Explorer.
 
 ## Notes
 
