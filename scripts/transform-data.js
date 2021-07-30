@@ -1,5 +1,6 @@
 const fs = require('fs');
 const jsesc = require('jsesc');
+const template = require('lodash.template');
 
 function format(object) {
 	return jsesc(object, {
@@ -53,3 +54,19 @@ fs.writeFileSync(
 	'./data/encoded.json',
 	format(result.encoded)
 );
+
+// tests/tests.src.js → tests/tests.js
+const TEST_TEMPLATE = fs.readFileSync('./tests/tests.src.js', 'utf8');
+const createTest = template(TEST_TEMPLATE, {
+	interpolate: /<\%=([\s\S]+?)%\>/g,
+});
+const testCode = createTest(require('./export-data.js'));
+fs.writeFileSync('./tests/tests.js', testCode);
+
+// src/ibm866.src.js -> ibm866.js
+const LIB_TEMPLATE = fs.readFileSync('./src/ibm866.src.js', 'utf8');
+const createLib = template(LIB_TEMPLATE, {
+	interpolate: /<\%=([\s\S]+?)%\>/g,
+});
+const libCode = createLib(require('./export-data.js'));
+fs.writeFileSync('./ibm866.js', libCode);

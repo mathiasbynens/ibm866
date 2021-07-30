@@ -2,7 +2,7 @@ const assert = require('assert');
 
 const ibm866 = require('../ibm866.js');
 
-console.log('Testing `ibm866.encode`');
+console.log('Testing `ibm866.encode`…');
 assert.strictEqual(
 	ibm866.encode('\0\x01\x02\x03\x04\x05\x06\x07\b\t\n\x0B\f\r\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\x1B\x1C\x1D\x1E\x1F !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7F'),
 	'\0\x01\x02\x03\x04\x05\x06\x07\b\t\n\x0B\f\r\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\x1B\x1C\x1D\x1E\x1F !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7F',
@@ -57,7 +57,7 @@ assert.strictEqual(
 	'Mode names are case-insensitive'
 );
 
-console.log('Testing `ibm866.decode`');
+console.log('Testing `ibm866.decode`…');
 assert.strictEqual(
 	ibm866.decode('\0\x01\x02\x03\x04\x05\x06\x07\b\t\n\x0B\f\r\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\x1B\x1C\x1D\x1E\x1F !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7F'),
 	'\0\x01\x02\x03\x04\x05\x06\x07\b\t\n\x0B\f\r\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\x1B\x1C\x1D\x1E\x1F !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7F',
@@ -102,8 +102,8 @@ assert.throws(
 	Error,
 	'Decoding a byte that is invalid for this encoding throws an error in `fatal` mode'
 );
-raises(
-	function() {
+assert.throws(
+	() => {
 		ibm866.decode('\uFFFF', { mode: 'fAtAl' });
 	},
 	Error,

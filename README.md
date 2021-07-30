@@ -1,4 +1,4 @@
-# ibm866 [![ibm866 on npm](https://img.shields.io/npm/v/ibm866)](https://www.npmjs.com/package/ibm866)
+# ibm866 [![Build status](https://github.com/mathiasbynens/ibm866/workflows/run-checks/badge.svg)](https://github.com/mathiasbynens/ibm866/actions?query=workflow%3Arun-checks) [![ibm866 on npm](https://img.shields.io/npm/v/ibm866)](https://www.npmjs.com/package/ibm866)
 
 _ibm866_ is a robust JavaScript implementation of [the ibm866 character encoding as defined by the Encoding Standard](https://encoding.spec.whatwg.org/#ibm866).
 
