@@ -3,7 +3,7 @@
 	"version": "3.0.0",
 	"description": "A robust ibm866 encoder/decoder written in JavaScript.",
 	"homepage": "https://mths.be/ibm866",
-	"exports": "ibm866.mjs",
+	"exports": "./ibm866.mjs",
 	"keywords": [
 		"codec",
 		"decoder",
