@@ -29,8 +29,10 @@
 	"bugs": "https://github.com/mathiasbynens/ibm866/issues",
 	"files": [
 		"LICENSE-MIT.txt",
-		"ibm866.mjs"
+		"ibm866.mjs",
+		"ibm866.d.ts"
 	],
+	"types": "ibm866.d.ts",
 	"scripts": {
 		"download": "curl https://encoding.spec.whatwg.org/index-ibm866.txt > data/index.txt",
 		"build": "node scripts/transform-data.js",
