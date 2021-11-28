@@ -1,6 +1,6 @@
 {
 	"name": "ibm866",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"description": "A robust ibm866 encoder/decoder written in JavaScript.",
 	"homepage": "https://mths.be/ibm866",
 	"exports": "./ibm866.mjs",
